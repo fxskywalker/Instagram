@@ -13,9 +13,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
-  
   [self authorize];
+  [self.loginWebView setHidden:YES];
+  [self.loginWebView.scrollView setScrollEnabled:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +48,10 @@
   }
   
   return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+  [self.loginWebView setHidden:NO];
 }
 
 @end

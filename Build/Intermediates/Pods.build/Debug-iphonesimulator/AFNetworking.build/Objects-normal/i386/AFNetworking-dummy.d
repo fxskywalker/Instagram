@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangxin/Documents/SmallProject/Pods/Target\ Support\ Files/AFNetworking/AFNetworking-dummy.m \
-  /Users/fangxin/Documents/SmallProject/Pods/Target\ Support\ Files/AFNetworking/AFNetworking-prefix.pch
+  /Users/fangxin/Desktop/SmallProject/Pods/Target\ Support\ Files/AFNetworking/AFNetworking-dummy.m \
+  /Users/fangxin/Desktop/SmallProject/Pods/Target\ Support\ Files/AFNetworking/AFNetworking-prefix.pch

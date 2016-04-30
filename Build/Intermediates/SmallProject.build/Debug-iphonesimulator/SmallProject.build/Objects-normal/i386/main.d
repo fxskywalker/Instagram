@@ -1,2 +1,2 @@
-dependencies: /Users/fangxin/Documents/SmallProject/SmallProject/main.m \
-  /Users/fangxin/Documents/SmallProject/SmallProject/AppDelegate.h
+dependencies: /Users/fangxin/Desktop/SmallProject/SmallProject/main.m \
+  /Users/fangxin/Desktop/SmallProject/SmallProject/AppDelegate.h
