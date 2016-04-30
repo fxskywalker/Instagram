@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangxin/Documents/SmallProject/SmallProject/VideoTableViewCell.m \
-  /Users/fangxin/Documents/SmallProject/SmallProject/VideoTableViewCell.h
+  /Users/fangxin/Desktop/SmallProject/SmallProject/VideoTableViewCell.m \
+  /Users/fangxin/Desktop/SmallProject/SmallProject/VideoTableViewCell.h
