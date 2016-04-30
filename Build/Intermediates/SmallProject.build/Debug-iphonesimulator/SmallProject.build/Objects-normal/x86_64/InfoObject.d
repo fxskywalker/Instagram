@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangxin/Documents/SmallProject/SmallProject/InfoObject.m \
-  /Users/fangxin/Documents/SmallProject/SmallProject/InfoObject.h
+  /Users/fangxin/Desktop/SmallProject/SmallProject/InfoObject.m \
+  /Users/fangxin/Desktop/SmallProject/SmallProject/InfoObject.h

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangxin/Documents/SmallProject/SmallProject/AppDelegate.m \
-  /Users/fangxin/Documents/SmallProject/SmallProject/AppDelegate.h
+  /Users/fangxin/Desktop/SmallProject/SmallProject/AppDelegate.m \
+  /Users/fangxin/Desktop/SmallProject/SmallProject/AppDelegate.h

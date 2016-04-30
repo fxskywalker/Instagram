@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangxin/Documents/SmallProject/SmallProject/LargeVideoViewController.m \
-  /Users/fangxin/Documents/SmallProject/SmallProject/LargeVideoViewController.h
+  /Users/fangxin/Desktop/SmallProject/SmallProject/LargeVideoViewController.m \
+  /Users/fangxin/Desktop/SmallProject/SmallProject/LargeVideoViewController.h

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/fangxin/Documents/SmallProject/SmallProject/ImageTableViewCell.m \
-  /Users/fangxin/Documents/SmallProject/SmallProject/ImageTableViewCell.h
+  /Users/fangxin/Desktop/SmallProject/SmallProject/ImageTableViewCell.m \
+  /Users/fangxin/Desktop/SmallProject/SmallProject/ImageTableViewCell.h
