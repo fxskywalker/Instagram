@@ -103,6 +103,7 @@
                         dispatch_async(dispatch_get_main_queue(), ^{
                           [self.mainTableView reloadData];
                         });
+                        [self.mainTableView setHidden:YES];
                         
                         APIManager* tempAPI = [APIManager sharedInstance];
                         [tempAPI.infos removeAllObjects];
@@ -250,10 +251,12 @@
             //update image
             [photoStore setObject:imageCell.mainPhotoImageView.image forKey:[tempId copy]];
             //clear storage
+            [self.mainTableView setHidden:NO];
             [self removeFile:url];
           }];
         } else {
           imageCell.mainPhotoImageView.image = photoStore[object.id];
+          [self.mainTableView setHidden:NO];
         }
         
         // make round profile
@@ -317,6 +320,7 @@
             }
             [playerStore setObject:avPlayer forKey:indexPath];
             [videoStore setObject:url forKey:[object.id copy]];
+            [self.mainTableView setHidden:NO];
           }];
         } else {
           AVPlayer* tempPlayer = (AVPlayer *)playerStore[indexPath];
@@ -325,6 +329,7 @@
           avPlayerLayer.videoGravity = AVLayerVideoGravityResize;
           [videoCell.videoView.layer addSublayer: avPlayerLayer];
           [tempPlayer play];
+          [self.mainTableView setHidden:NO];
         }
 
         // make round profile
@@ -394,7 +399,9 @@
   [[APIManager sharedInstance] getVedioAndImageLinkArray: ^(bool result) {
     [refreshControl endRefreshing];
     tempInfo = tempAPI.infos;
-    [self.mainTableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [self.mainTableView reloadData];
+    });
     loadingMoreData = NO;
   }];
 }
@@ -406,7 +413,9 @@
   [[APIManager sharedInstance] getVedioAndImageLinkArray: ^(bool result) {
     if (result) {
       tempInfo = temp.infos;
-      [self.mainTableView reloadData];
+      dispatch_async(dispatch_get_main_queue(), ^{
+        [self.mainTableView reloadData];
+      });
       loadingMoreData = NO;
     }
     [indicatorFooter stopAnimating];
