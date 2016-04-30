@@ -25,7 +25,7 @@
 
 - (void)authorize
 {
-  NSString *urlString = @"https://api.instagram.com/oauth/authorize/?client_id=649a0fe5cb0a42d8aaef019e2646f85c&redirect_uri=http://www.google.com&response_type=token";
+  NSString *urlString = @"https://api.instagram.com/oauth/authorize/?client_id=649a0fe5cb0a42d8aaef019e2646f85c&redirect_uri=http://www.google.com&response_type=token&scope=likes+comments";
   NSURL *url = [NSURL URLWithString:urlString];
   NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
   [self.loginWebView loadRequest:urlRequest];

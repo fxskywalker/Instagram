@@ -10,5 +10,6 @@
 
 @interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 - (void) loadingData;
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 @end
 
