@@ -38,7 +38,7 @@
 
 -(void) buildUpBaseURL:(NSString *) urlToken {
   self.token = urlToken;
-  self.baseURL = [[@"https://api.instagram.com/v1/users/3178274469/media/recent?access_token=" stringByAppendingString:self.token] stringByAppendingString:@"&count=5&max_id="];
+  self.baseURL = [[@"https://api.instagram.com/v1/users/self/media/recent/?access_token=" stringByAppendingString:self.token] stringByAppendingString:@"&count=5&max_id="];
 }
 
 - (void) getVedioAndImageLinkArray: (void(^)(bool))completion  {

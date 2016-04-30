@@ -19,7 +19,6 @@
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *gearButton;
-@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end
 
@@ -70,10 +69,13 @@
 }
 
 - (void) loadingData {
+  loadingMoreData = YES;
   APIManager * temp = [APIManager sharedInstance];
   [[APIManager sharedInstance] getVedioAndImageLinkArray: ^(bool result) {
     tempInfo = temp.infos;
-    [self.mainTableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+         [self.mainTableView reloadData];
+    });
     loadingMoreData = NO;
     [self initializeRefreshControl];
   }];
