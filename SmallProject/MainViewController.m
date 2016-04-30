@@ -24,6 +24,7 @@
 @end
 
 @implementation MainViewController {
+  UIRefreshControl* refreshControl;
   NSArray * tempInfo;
   NSMutableDictionary* photoStore;
   NSMutableDictionary* profileStore;
@@ -44,6 +45,10 @@
   LoginController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
   loginVC.mainVC = self;
   [self presentViewController:loginVC animated:nil completion:nil];
+  
+  refreshControl = [[UIRefreshControl alloc]init];
+  [self.mainTableView addSubview:refreshControl];
+  [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -370,6 +375,28 @@
   [self.mainTableView setTableFooterView:indicatorFooter];
 }
 
+- (void)refreshTable {
+  for (NSString* key in playerStore.allKeys) {
+    AVPlayer * temp = playerStore[key];
+    [temp pause];
+  }
+  tempInfo = nil;
+  [photoStore removeAllObjects];
+  [profileStore removeAllObjects];
+  [videoStore removeAllObjects];
+  [playerStore removeAllObjects];
+  loadingMoreData = YES;
+  APIManager* tempAPI = [APIManager sharedInstance];
+  [tempAPI.infos removeAllObjects];
+  [tempAPI buildUpBaseURL:tempAPI.token];
+  [[APIManager sharedInstance] getVedioAndImageLinkArray: ^(bool result) {
+    [refreshControl endRefreshing];
+    tempInfo = tempAPI.infos;
+    [self.mainTableView reloadData];
+    loadingMoreData = NO;
+  }];
+}
+
 -(void)refreshTableVeiwList
 {
   [indicatorFooter startAnimating];
@@ -383,6 +410,7 @@
     [indicatorFooter stopAnimating];
   }];
 }
+
 -(void)scrollViewDidScroll: (UIScrollView*)scrollView
 {
   if (scrollView.contentOffset.y + scrollView.frame.size.height >= scrollView.contentSize.height)
