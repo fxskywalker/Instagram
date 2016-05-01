@@ -94,6 +94,7 @@
                         for (NSString* key in playerStore.allKeys) {
                           AVPlayer * temp = playerStore[key];
                           [temp pause];
+                          [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[temp currentItem]];
                         }
                         tempInfo = nil;
                         [photoStore removeAllObjects];
@@ -308,7 +309,7 @@
           for (CALayer* subLayer in [videoCell.videoView.layer sublayers]) {
             if ([subLayer isKindOfClass:[AVPlayerLayer class]]) {
               dispatch_async(dispatch_get_main_queue(), ^{
-                [subLayer removeFromSuperlayer];
+                 [subLayer removeFromSuperlayer];
               });
             }
           }
@@ -396,6 +397,7 @@
   for (NSString* key in playerStore.allKeys) {
     AVPlayer * temp = playerStore[key];
     [temp pause];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[temp currentItem]];
   }
   tempInfo = nil;
   [photoStore removeAllObjects];
