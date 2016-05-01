@@ -4,7 +4,7 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphoneos/AFNetworking.framework/Headers",
+      'name': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -34,7 +34,7 @@
         {
           'type': 'file',
           'name': "AFNetworking-Swift.h",
-          'external-contents': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworking-Swift.h"
+          'external-contents': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworking-Swift.h"
         },
         {
           'type': 'file',
@@ -120,18 +120,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphoneos/AFNetworking.framework/Modules",
+      'name': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/fangxin/Desktop/SmallProject/Build/Intermediates/Pods.build/Debug-iphoneos/AFNetworking.build/module.modulemap"
+          'external-contents': "/Users/fangxin/Desktop/SmallProject/Build/Intermediates/Pods.build/Debug-iphonesimulator/AFNetworking.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphoneos/Pods_SmallProject.framework/Headers",
+      'name': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphonesimulator/Pods_SmallProject.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -141,18 +141,18 @@
         {
           'type': 'file',
           'name': "Pods_SmallProject-Swift.h",
-          'external-contents': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphoneos/Pods_SmallProject.framework/Headers/Pods_SmallProject-Swift.h"
+          'external-contents': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphonesimulator/Pods_SmallProject.framework/Headers/Pods_SmallProject-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphoneos/Pods_SmallProject.framework/Modules",
+      'name': "/Users/fangxin/Desktop/SmallProject/Build/Products/Debug-iphonesimulator/Pods_SmallProject.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/fangxin/Desktop/SmallProject/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-SmallProject.build/module.modulemap"
+          'external-contents': "/Users/fangxin/Desktop/SmallProject/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-SmallProject.build/module.modulemap"
         }
       ]
     }
