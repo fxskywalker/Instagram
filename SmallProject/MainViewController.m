@@ -241,7 +241,7 @@
         imageCell.mainPhotoImageView.layer.shadowRadius = 5;
         imageCell.mainPhotoImageView.layer.shadowOpacity = 0.5;
         imageCell.mainPhotoImageView.layer.shadowColor = [[UIColor blackColor] CGColor];
-        
+        imageCell.mainPhotoImageView.image = nil;
         // prevent call API deplicate time
         if (!photoStore[object.id]) {
           [[APIManager sharedInstance] getImageByLink:object.imageNail withCallBack:^(NSURL* url){
@@ -249,7 +249,10 @@
             imageCell.mainPhotoImageView.image = [UIImage imageWithData: imageData];
             NSString *tempId = object.id;
             //update image
-            [photoStore setObject:imageCell.mainPhotoImageView.image forKey:[tempId copy]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+              [photoStore setObject:imageCell.mainPhotoImageView.image forKey:[tempId copy]];
+            });
+            
             //clear storage
             [self.mainTableView setHidden:NO];
             [self removeFile:url];
@@ -299,9 +302,16 @@
         videoCell.videoView.layer.shadowRadius = 5;
         videoCell.videoView.layer.shadowOpacity = 0.5;
         videoCell.videoView.layer.shadowColor = [[UIColor blackColor] CGColor];
-        
        
         if (!videoStore[object.id]) {
+          //clear containt
+          for (CALayer* subLayer in [videoCell.videoView.layer sublayers]) {
+            if ([subLayer isKindOfClass:[AVPlayerLayer class]]) {
+              dispatch_async(dispatch_get_main_queue(), ^{
+                [subLayer removeFromSuperlayer];
+              });
+            }
+          }
           [[APIManager sharedInstance] getVideoByLink: object.videoNail withCallBack:^(NSURL* url) {
             AVPlayer * avPlayer = [AVPlayer playerWithURL:url];
             AVPlayerLayer* avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer:avPlayer];
